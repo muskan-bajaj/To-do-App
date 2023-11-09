@@ -9,15 +9,13 @@ export default function TaskList(props) {
       <div>{props.item.when}</div>
       <div>{props.item.priority}</div>
       <div>
-        {props.item.fulfilled ? (
-          <>
-            <input type="checkbox" checked={true} />
-          </>
-        ) : (
-          <>
-            <input type="checkbox" checked={false} />
-          </>
-        )}
+        <input
+          type="checkbox"
+          defaultChecked={props.item.fulfilled}
+          onChange={(e) => {
+            console.log(e.target.checked);
+          }}
+        />
       </div>
     </div>
   );

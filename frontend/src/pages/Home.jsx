@@ -4,6 +4,7 @@ import TaskList from "../component/TaskList";
 
 const data = [
   {
+    _id: 1,
     task: "DAA Project",
     category: "Coding",
     when: "26.07.23",
@@ -11,6 +12,7 @@ const data = [
     fulfilled: true,
   },
   {
+    _id: 2,
     task: "DAA Project",
     category: "Coding",
     when: "26.07.23",
