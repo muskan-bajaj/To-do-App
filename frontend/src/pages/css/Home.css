@@ -56,8 +56,8 @@ button{
 .btn2 {
     width: 12vw;
     height: 7vh;
-    background-color: #000;
-    color: #fff;
+    /* background-color: #000; */
+    /* color: #fff; */
     border: none;
     border-radius: 10px;
 }
@@ -84,7 +84,7 @@ button{
     padding: 40px 60px;
 }
 
-.tasks, .listItem{
+.tasks{
     display: grid;
     grid-template-columns: repeat(6, 1fr);
 }
@@ -95,10 +95,6 @@ button{
 
 .tasks div{
     font-size: 20px;
-}
-
-.listItem div input{
-    cursor: pointer;
 }
 
 .footer {

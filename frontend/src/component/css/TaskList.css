@@ -1,0 +1,7 @@
+.listItem{
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);   
+}
+.listItem div input{
+    cursor: pointer;
+}
