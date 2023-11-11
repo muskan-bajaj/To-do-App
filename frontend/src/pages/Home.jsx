@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./css/Home.css";
 import TaskList from "../component/TaskList";
+import Modal from "../component/Modal";
 
 const data = [
   {
@@ -27,6 +28,7 @@ export default function Home() {
   const [complete, setComplete] = useState(false);
   const [todoTask, setTodoTask] = useState([]);
   const [completedTask, setCompletedTask] = useState([]);
+  const [modal, setModal] = useState(false);
 
   const active = {
     color: "white",
@@ -67,7 +69,14 @@ export default function Home() {
           <p>React To-Do List</p>
         </div>
         <div className="buttons">
-          <button className="btn1">Add a new to-do</button>
+          <button
+            className="btn1"
+            onClick={() => {
+              setModal(true);
+            }}
+          >
+            Add a new to-do
+          </button>
           <button
             className="btn2"
             style={all ? active : byDefault}
@@ -125,6 +134,7 @@ export default function Home() {
             })}
         </div>
       </div>
+      {modal && <Modal setModal={setModal} />}
       <div className="footer">
         Muskan Bajaj, Vinit Agarwal, Satyam Raj © 2023 all rights reserved
       </div>
