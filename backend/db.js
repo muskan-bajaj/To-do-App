@@ -1,8 +1,9 @@
-const mongoose = require("mongoose")
+require("dotenv").config();
+const mongoose = require("mongoose");
 
-async function config(){
-    await mongoose.connect("mongodb://localhost:27017")
-    console.log("db.js -> Database Connection Successfull")
+async function config() {
+  await mongoose.connect(process.env.MONGOURL);
+  console.log("Database Connection Successfull");
 }
 
-exports.config = config
+exports.config = config;
