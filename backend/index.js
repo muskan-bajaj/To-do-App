@@ -84,7 +84,7 @@ app.use((req, res, next) => {
 });
 
 app.get("/getTask", getTask);
-app.get("/addTask", insertTask);
+app.post("/addTask", insertTask);
 app.get("/toggleTask", toggleTask);
 app.listen(8080, async () => {
   await db.config();

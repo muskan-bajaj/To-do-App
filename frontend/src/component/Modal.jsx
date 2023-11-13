@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./css/Modal.css";
+import axios from "axios";
 
 export default function Modal(props) {
   const [data, setData] = useState({
@@ -8,6 +9,12 @@ export default function Modal(props) {
     DateTime: "",
     Priority: 0,
   });
+
+  const addNewTask = async () => {
+    const response = await axios.post("http://localhost:8080/addTask", data);
+    console.log(response);
+  };
+
   return (
     <div className="mainModal">
       <div className="content">
@@ -64,12 +71,7 @@ export default function Modal(props) {
           </select>
         </div>
         <div className="modalBtn">
-          <button
-            className="saveBtn"
-            onClick={() => {
-              console.log(data);
-            }}
-          >
+          <button className="saveBtn" onClick={addNewTask}>
             Save
           </button>
           <button
