@@ -6,7 +6,7 @@ export default function Modal(props) {
   const [data, setData] = useState({
     Name: "",
     Category: "",
-    DateTime: "",
+    Date: "",
     Priority: 0,
   });
 
@@ -49,9 +49,9 @@ export default function Modal(props) {
             type="datetime-local"
             name="datetime"
             id="datetime"
-            value={data.DateTime}
+            value={data.Date}
             onChange={(e) => {
-              setData({ ...data, DateTime: e.target.value });
+              setData({ ...data, Date: e.target.value });
             }}
           />
           <label htmlFor="priority">Priority:</label>

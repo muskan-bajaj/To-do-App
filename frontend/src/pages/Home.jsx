@@ -51,6 +51,14 @@ export default function Home() {
     }
   };
 
+  const toggleStatus = async (id, complete) => {
+    const response = await axios.get(
+      `http://localhost:8080/toggletask?taskid=${id}&completed=${complete}`
+    );
+    console.log(response);
+    getAllTask();
+  };
+
   useEffect(() => {
     getAllTask();
   }, []);
@@ -58,7 +66,7 @@ export default function Home() {
   useEffect(() => {
     setTodoTask(
       data.filter((item) => {
-        if (!item.fulfilled) {
+        if (!item.Completed) {
           return item;
         }
       })
@@ -66,7 +74,7 @@ export default function Home() {
 
     setCompletedTask(
       data.filter((item) => {
-        if (item.fulfilled) {
+        if (item.Completed) {
           return item;
         }
       })
@@ -138,15 +146,21 @@ export default function Home() {
           </div>
           {all &&
             data.map((item) => {
-              return <TaskList key={item} item={item} />;
+              return (
+                <TaskList key={item} item={item} toggleStatus={toggleStatus} />
+              );
             })}
           {todo &&
             todoTask.map((item) => {
-              return <TaskList key={item} item={item} />;
+              return (
+                <TaskList key={item} item={item} toggleStatus={toggleStatus} />
+              );
             })}
           {complete &&
             completedTask.map((item) => {
-              return <TaskList key={item} item={item} />;
+              return (
+                <TaskList key={item} item={item} toggleStatus={toggleStatus} />
+              );
             })}
         </div>
       </div>
