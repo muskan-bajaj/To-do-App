@@ -1,7 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import "./css/Modal.css";
 
 export default function Modal(props) {
+  const [data, setData] = useState({
+    Name: "",
+    Category: "",
+    DateTime: "",
+    Priority: 0,
+  });
   return (
     <div className="mainModal">
       <div className="content">
@@ -15,6 +21,10 @@ export default function Modal(props) {
             name="name"
             id="name"
             placeholder="name for the task you’re going to do"
+            value={data.Name}
+            onChange={(e) => {
+              setData({ ...data, Name: e.target.value });
+            }}
           />
           <label htmlFor="category">Category:</label>
           <input
@@ -22,21 +32,46 @@ export default function Modal(props) {
             name="category"
             id="category"
             placeholder="e.g. household, school, work"
+            value={data.Category}
+            onChange={(e) => {
+              setData({ ...data, Category: e.target.value });
+            }}
           />
           <label htmlFor="datetime">Date/Time:</label>
-          <input type="datetime-local" name="datetime" id="datetime" />
+          <input
+            type="datetime-local"
+            name="datetime"
+            id="datetime"
+            value={data.DateTime}
+            onChange={(e) => {
+              setData({ ...data, DateTime: e.target.value });
+            }}
+          />
           <label htmlFor="priority">Priority:</label>
-          <select name="priority" id="priority">
+          <select
+            name="priority"
+            id="priority"
+            onChange={(e) => {
+              setData({ ...data, Priority: Number(e.target.value) });
+            }}
+          >
             <option hidden selected>
               Select from dropdown
             </option>
-            <option value="high">High</option>
-            <option value="medium">Medium</option>
-            <option value="low">Low</option>
+            <option value={0}>High</option>
+            <option value={1}>Medium</option>
+            <option value={2}>Low</option>
           </select>
         </div>
         <div className="modalBtn">
-          <button className="saveBtn">Save</button>
+          <button
+            className="saveBtn"
+            onClick={() => {
+              console.log(data);
+            }}
+          >
+            Save
+          </button>
           <button
             className="cancelBtn"
             onClick={() => {
