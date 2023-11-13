@@ -13,10 +13,6 @@ const events = new Schema({
     type: String,
     required: true,
   },
-  Time: {
-    type: String,
-    required: true,
-  },
   createdOn: {
     type: String,
     required: true,
