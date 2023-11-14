@@ -65,9 +65,9 @@ export default function Modal(props) {
             <option hidden selected>
               Select from dropdown
             </option>
-            <option value={0}>High</option>
+            <option value={2}>High</option>
             <option value={1}>Medium</option>
-            <option value={2}>Low</option>
+            <option value={0}>Low</option>
           </select>
         </div>
         <div className="modalBtn">

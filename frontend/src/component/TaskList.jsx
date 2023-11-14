@@ -6,13 +6,13 @@ export default function TaskList(props) {
   const [priority, setPriority] = useState("");
 
   useEffect(() => {
-    if (props.item.Priority == 0) {
+    if (props.item.Priority == 2) {
       setPriority("High");
     }
     if (props.item.Priority == 1) {
       setPriority("Medium");
     }
-    if (props.item.Priority == 2) {
+    if (props.item.Priority == 0) {
       setPriority("Low");
     }
   }, []);

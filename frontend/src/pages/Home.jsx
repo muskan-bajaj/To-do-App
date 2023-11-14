@@ -4,25 +4,6 @@ import TaskList from "../component/TaskList";
 import Modal from "../component/Modal";
 import "./css/Home.css";
 
-// const data = [
-//   {
-//     _id: 1,
-//     task: "DAA Project",
-//     category: "Coding",
-//     when: "26.07.23",
-//     priority: "High",
-//     fulfilled: true,
-//   },
-//   {
-//     _id: 2,
-//     task: "DAA Project",
-//     category: "Coding",
-//     when: "26.07.23",
-//     priority: "High",
-//     fulfilled: false,
-//   },
-// ];
-
 export default function Home() {
   const [all, setAll] = useState(true);
   const [todo, setTodo] = useState(false);
@@ -80,11 +61,6 @@ export default function Home() {
       })
     );
   }, [data]);
-
-  // useEffect(() => {
-  //   console.log(todoTask);
-  //   console.log(completedTask);
-  // }, [todoTask, completedTask]);
 
   return (
     <div className="main">
