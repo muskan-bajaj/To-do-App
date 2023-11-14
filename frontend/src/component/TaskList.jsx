@@ -28,8 +28,8 @@ export default function TaskList(props) {
           type="checkbox"
           defaultChecked={props.item.Completed}
           // onChange={props.toggleStatus(props.item._id, props.item.Completed)}
-          onChange={() => {
-            props.toggleStatus(props.item._id, props.item.Completed);
+          onChange={(e) => {
+            props.toggleStatus(props.item._id, e.target.checked);
           }}
         />
       </div>
