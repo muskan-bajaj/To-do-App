@@ -12,7 +12,7 @@ export default function Modal(props) {
 
   const addNewTask = async () => {
     const response = await axios.post("http://localhost:8080/addTask", data);
-    console.log(response);
+    props.setModal(false);
   };
 
   return (
