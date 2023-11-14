@@ -142,7 +142,7 @@ export default function Home() {
       </div>
       {modal && <Modal setModal={setModal} />}
       <div className="footer">
-        {/* Muskan Bajaj, Vinit Agarwal, Satyam Raj © 2023 all rights reserved */}
+        Muskan Bajaj, Vinit Agarwal, Satyam Raj © 2023 all rights reserved
       </div>
     </div>
   );
