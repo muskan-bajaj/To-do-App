@@ -6,6 +6,7 @@ export default function TaskList(props) {
   const [priority, setPriority] = useState("");
 
   useEffect(() => {
+    console.log(props.item)
     if (props.item.Priority == 2) {
       setPriority("High");
     }

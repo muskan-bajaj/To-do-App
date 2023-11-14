@@ -27,7 +27,7 @@ async function getTask(req, res, next) {
         final.push(task);
       });
     });
-    res.json(final);
+    res.json(final.reverse());
   } catch (err) {
     res.sendStatus(400);
     console.log(err);

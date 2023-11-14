@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./css/Modal.css";
 import axios from "axios";
 
@@ -12,9 +12,12 @@ export default function Modal(props) {
 
   const addNewTask = async () => {
     const response = await axios.post("http://localhost:8080/addTask", data);
+    if(response.status == 200) window.location.reload(false)
     props.setModal(false);
   };
-
+  useEffect(()=>{
+    console.log(data)
+  },[data])
   return (
     <div className="mainModal">
       <div className="content">
