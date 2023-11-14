@@ -22,7 +22,7 @@ export default function TaskList(props) {
     <div key={props.item} className="listItem">
       <div>{props.item.Name}</div>
       <div>{props.item.Category}</div>
-      <div>{props.item.Date}</div>
+      <div>{new Date(props.item.Date).toLocaleString()}</div>
       <div>{priority}</div>
       <div>
         <input
